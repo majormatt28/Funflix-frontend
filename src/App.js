@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+console.log(process.env.REACT_APP_MOVIE_DB_API_KEY)
 
 
 
