@@ -1,25 +1,55 @@
 import {useState, useEffect} from "react";
+import {Switch, Route} from "react-router-dom";
 import NavBar from "./NavBar";
 import MovieContainer from "./MovieContainer";
-import FunFlixHeader from "./FunFlixHeader"
-
+import Header from "./Header"
+import SignUpForm from "./SignUpForm";
+import LoginForm from "./LoginForm";
+import Home from "./Home";
 
 
 function App() {
   const [userLogin, setUserLogin] = useState(null)
-    console.log(userLogin )
-    useEffect(()=>{
-        fetch ("http://127.0.0.1:3001/me")
-        .then (resp=>resp.json())
-        .then (user => setUserLogin(user))
-    },[])
+  console.log(userLogin)
+    // useEffect(()=>{
+    //     fetch ("http://127.0.0.1:3001/me")
+    //     .then (resp=>resp.json())
+    //     .then (user => setUserLogin(user))
+    // },[])
   return (
     <div className="App">
-      <FunFlixHeader />
-      <NavBar userLogin = {userLogin} setUserLogin={setUserLogin}/>
+      <Header />
+      
+      <NavBar userLogin={userLogin} />
+      
+      <Home /> 
+       
+      <LoginForm setUserLogin={setUserLogin}/>  
+       
+      
+      
+      <SignUpForm />   
+          
       <MovieContainer />
-    </div>
-  );
-}
+         
+      </div>
+            
+           
+          
+          
+  )}
+          
+      
+          
+          
+        
+          
+        
+          
+        
+          
+      
+      
+
 
 export default App;

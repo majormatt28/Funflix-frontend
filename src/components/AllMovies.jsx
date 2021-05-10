@@ -1,11 +1,12 @@
-import MovieContainer from "./MovieContainer"
-import MovieItem from "./MovieItem"
+// import MovieContainer from "./MovieContainer"
+// import MovieItem from "./MovieItem"
 
-function AllMovies () {
-    return (
-        <MovieContainer />,
-        <MovieItem />
-    );
-}
+// function AllMovies () {
+//     return (
+        
+//         <MovieContainer />,
+//         <MovieItem />
+//     );
+// }
 
-export default AllMovies
+// export default AllMovies

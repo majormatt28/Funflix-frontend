@@ -1,8 +1,13 @@
 
 
-function MovieItem () {
+function MovieItem ({id, image, title, description, release_date}) {
     return (
-        "One Movie Card"
+        <li>
+            <div>
+                <img src={image} alt={title}/>
+                <h3>{title}</h3>
+            </div>
+        </li>
     )
 }
 

@@ -1,16 +1,19 @@
 
 
-function MovieFilter () {
+function MovieFilter ({setFilterAllMovie}) {
+
+    // const handleClick = (e)=>setFilterAllMovie(e.target.value)
     return (
         <> 
+        
         <div className="genre-buttons">
-            <button>All</button>
-            <button>Action</button>
-            <button>Adventure</button>
-            <button>Comedy</button>
-            <button>Horror</button>
-            <button>Romance</button>
-            <button>Thriller</button>
+            <button onClick={()=> setFilterAllMovie("All")}>All</button>
+            <button onClick={()=> setFilterAllMovie("Action")}>Action</button>
+            <button onClick={()=> setFilterAllMovie("Adventure")}>Adventure</button>
+            <button onClick={()=> setFilterAllMovie("Comedy")}>Comedy</button>
+            <button onClick={()=> setFilterAllMovie("Horror")}>Horror</button>
+            <button onClick={()=> setFilterAllMovie("Romance")}>Romance</button>
+            <button onClick={()=> setFilterAllMovie("Thriller")}>Thriller</button>
         </div>
         </>
     )

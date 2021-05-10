@@ -1,24 +1,43 @@
-import {useState, useEffect} from "react";
-import LoginForm from "./LoginForm";
-import SignUpForm from "./SignUpForm";
-import AllMovies from "./AllMovies"
+import {React} from "react";
+import {NavLink} from "react-router-dom";
+// import LoginForm from "./LoginForm";
+// import SignUpForm from "./SignUpForm";
+// import AllMovies from "./AllMovies"
 
-function NavBar ({userLogin, setUserLogin}) {
-    
+function NavBar ({userLogin}) {
+    // const [userLogin, setUserLogin] = useState(null)
+    // const [userSignUp, setUserSignUp] = useState(null)
 
-   return (
-       <div>
-           {userLogin? (
-               <>
-                    <AllMovies />
-                    <button>Logout</button>
-               </>
-           ):(
-                <>
-                    <LoginForm setUserLogin={setUserLogin} />
-                    <SignUpForm />
-                </>
-           )}
+   return ( 
+        <div>
+            {userLogin? (
+                <button>Logout</button>
+            ):(
+            <>
+                <NavLink  to ="/login">
+                    Login
+                </NavLink>
+                <NavLink  to ="/signup">
+                    SignUp
+                </NavLink>
+            </>
+            )}
+            
+
+            {/* <NavLink to ="/signup">
+                
+            </NavLink> */}
+            
+                
+                     {/* <AllMovies /> */}
+                    
+               
+            
+                 
+                     {/* <LoginForm setUserLogin={setUserLogin} />
+                     <SignUpForm setUserSignUp={setUserSignUp}/> */}
+                 
+            
        </div>
    );
 }
