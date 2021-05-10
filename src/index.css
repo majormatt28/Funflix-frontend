@@ -1,84 +1,47 @@
 
 body {
-  font-family: "Fira Code", monospace;
-  font-size: 16px;
-  color: red;
-  background-color: black;
+  min-height: 100vh;
+  background: #111;
 }
 
 .App {
   color: black;
-  background-color: lightblue;
+  background-color: red;
   min-height: 100vh;
 }
 
-.button {
-  padding: 0.75em;
-  border: none;
-  font: inherit;
-  font-weight: 600;
-  color: inherit;
-  cursor: pointer;
-  color: var(--primary);
-  background-color: var(--background);
-  border: 2px solid var(--black);
-  transition: background-color 0.2s;
-  line-height: 1;
-}
-
-.button.active,
-.button:hover,
-button.active,
-button:focus,
-button:hover {
-  outline: none;
-  color: var(--black);
-  background-color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-button:disabled {
-  cursor: not-allowed;
-  color: var(--dark-grey);
-  background-color: var(--grey);
-}
-
-button.blue {
-  border: 2px solid var(--blue-dark);
-  color: var(--blue);
-}
-
-button.blue.active,
-button.blue:focus,
-button.blue:hover {
-  color: var(--red);
-  background-color: var(--blue);
-  border: 2px solid var(--blue);
-}
-
 header {
-  padding: 1rem;
+  width: 100%;
+  min-height: 80px;
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
-  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  background: #111;
+  position: relative;
 }
 
-header h1 {
-  margin: 0;
-  cursor: pointer;
+.logo {
+  font-size: 2em;
+  color: red;
+  margin-left: 100px;
 }
 
-header h1 a {
-  border-bottom: none;
+button {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #000000;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
 }
 
-header h1 a:hover {
-  border-bottom: none;
-  background-color: transparent;
-}
-
-header nav > * {
-  margin: 0 0.5rem;
+.button:hover {
+  background: #3cb0fd;
+  text-decoration: none;
 }
 
 .genre-buttons {
@@ -90,5 +53,28 @@ header nav > * {
 
 .genre-buttons button {
   margin: 0 1rem;
+}
 
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+}
+
+a.button {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #000000;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+a.button:hover {
+  background: #3cb0fd;
+  text-decoration: none;
 }
