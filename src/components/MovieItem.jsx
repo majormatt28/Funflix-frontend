@@ -6,6 +6,7 @@ function MovieItem ({id, image, title, description, release_date}) {
             <div>
                 <img src={image} alt={title}/>
                 <h3>{title}</h3>
+                
             </div>
         </li>
     )
