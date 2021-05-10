@@ -12,49 +12,7 @@ body {
   min-height: 100vh;
 }
 
-.button {
-  padding: 0.75em;
-  border: none;
-  font: inherit;
-  font-weight: 600;
-  color: inherit;
-  cursor: pointer;
-  color: var(--primary);
-  background-color: var(--background);
-  border: 2px solid var(--black);
-  transition: background-color 0.2s;
-  line-height: 1;
-}
 
-.button.active,
-.button:hover,
-button.active,
-button:focus,
-button:hover {
-  outline: none;
-  color: var(--black);
-  background-color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-button:disabled {
-  cursor: not-allowed;
-  color: var(--dark-grey);
-  background-color: var(--grey);
-}
-
-button.blue {
-  border: 2px solid var(--blue-dark);
-  color: var(--blue);
-}
-
-button.blue.active,
-button.blue:focus,
-button.blue:hover {
-  color: var(--red);
-  background-color: var(--blue);
-  border: 2px solid var(--blue);
-}
 
 header {
   padding: 1rem;
@@ -81,6 +39,38 @@ header nav > * {
   margin: 0 0.5rem;
 }
 
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: #0069ed;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #0053ba;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
 .genre-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -92,3 +82,4 @@ header nav > * {
   margin: 0 1rem;
 
 }
+
