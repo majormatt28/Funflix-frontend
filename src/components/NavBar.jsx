@@ -1,10 +1,10 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import AllMovies from "./AllMovies"
 
-function NavBar () {
-    const [userLogin, setUserLogin] = useState(null)
+function NavBar ({userLogin, setUserLogin}) {
+    
 
    return (
        <div>

@@ -43,7 +43,7 @@ function SignUpForm ({onAddUser}) {
             />
             <label htmlFor="age">Age</label>
             <input 
-               type="text"
+               type="number"
                name="age"
                value={age}
                onChange={(event) => setAge(event.target.value)}
