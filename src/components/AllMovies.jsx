@@ -3,6 +3,7 @@ import MovieItem from "./MovieItem"
 
 function AllMovies () {
     return (
+        
         <MovieContainer />,
         <MovieItem />
     );

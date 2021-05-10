@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function SignUpForm ({onAddUser}) {
+function SignUpForm ({ setUserSignUp }) {
    const [username, setUserName] = useState("");
    const [password, setPassword] = useState("");
    const [age, setAge] = useState(0);
@@ -19,7 +19,7 @@ function SignUpForm ({onAddUser}) {
       })
          .then(r => r.json())
          .then(newUser => {
-            onAddUser(newUser);
+            setUserSignUp(newUser);
          })
    }
 
@@ -48,6 +48,7 @@ function SignUpForm ({onAddUser}) {
                value={age}
                onChange={(event) => setAge(event.target.value)}
             />
+            <button type="submit">Sign Up</button>
          </form>
       </section>
    )

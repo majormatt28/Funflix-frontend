@@ -1,6 +1,6 @@
 
 
-function FunFlixHeader () {
+function Header () {
    return (
       <header>
          <h1>
@@ -10,4 +10,4 @@ function FunFlixHeader () {
    )
 }
 
-export default FunFlixHeader;
+export default Header;

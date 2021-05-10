@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./NavBar";
 import MovieContainer from "./MovieContainer";
-import FunFlixHeader from "./FunFlixHeader"
+import Header from "./Header"
 
 
 
@@ -9,7 +9,7 @@ function App() {
   
   return (
     <div className="App">
-      <FunFlixHeader />
+      <Header />
       <NavBar />
       <MovieContainer />
     </div>

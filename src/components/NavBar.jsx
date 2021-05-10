@@ -5,18 +5,19 @@ import AllMovies from "./AllMovies"
 
 function NavBar () {
     const [userLogin, setUserLogin] = useState(null)
+    const [userSignUp, setUserSignUp] = useState(null)
 
    return (
        <div>
-           {userLogin? (
+           {userLogin ? (
                <>
                     <AllMovies />
                     <button>Logout</button>
                </>
-           ):(
+           ):( 
                 <>
                     <LoginForm setUserLogin={setUserLogin} />
-                    <SignUpForm />
+                    <SignUpForm setUserSignUp={setUserSignUp}/>
                 </>
            )}
        </div>
