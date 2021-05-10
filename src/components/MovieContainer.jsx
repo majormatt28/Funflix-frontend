@@ -1,7 +1,9 @@
-
+import MovieFilter from "./MovieFilter"
 
 function MovieContainer() {
-   return "Movie list"
+   return (
+      <MovieFilter />
+   )
 }
 
 export default MovieContainer;
