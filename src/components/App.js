@@ -1,6 +1,5 @@
 import {useState, useEffect} from "react";
 import {Switch, Route} from "react-router-dom";
-import NavBar from "./NavBar";
 import MovieContainer from "./MovieContainer";
 import Header from "./Header"
 import SignUpForm from "./SignUpForm";
@@ -19,8 +18,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      
-      <NavBar userLogin={userLogin} />
       
       <Home /> 
        
