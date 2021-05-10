@@ -25,7 +25,7 @@ function SignUpForm ({ setUserSignUp }) {
 
    return (
       <section>
-         <form onSubmit={handleSubmit} className="form">
+         <form onSubmit={handleSubmit} className="signup-form">
             <h3>Please fill out Sign Up Form</h3>
             <label htmlFor="username">UserName</label>
             <input

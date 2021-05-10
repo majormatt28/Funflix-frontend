@@ -8,67 +8,42 @@ body {
 
 .App {
   color: black;
-  background-color: lightblue;
+  background-color: red;
   min-height: 100vh;
 }
 
-
-
 header {
-  padding: 1rem;
+  width: 100%;
+  min-height: 80;
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
-  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  background: #111;
+  position: relative;
 }
 
-header h1 {
-  margin: 0;
-  cursor: pointer;
-}
-
-header h1 a {
-  border-bottom: none;
-}
-
-header h1 a:hover {
-  border-bottom: none;
-  background-color: transparent;
-}
-
-header nav > * {
-  margin: 0 0.5rem;
+.logo {
+  font-size: 2em;
+  color: red;
+  margin-left: 100px;
 }
 
 button {
-  display: inline-block;
-  border: none;
-  padding: 1rem 2rem;
-  margin: 0;
-  text-decoration: none;
-  background: #0069ed;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
   color: #ffffff;
-  font-family: sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  transition: background 250ms ease-in-out, 
-              transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  font-size: 20px;
+  background: #000000;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
 }
 
-button:hover,
-button:focus {
-  background: #0053ba;
-}
-
-button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
-
-button:active {
-  transform: scale(0.99);
+.button:hover {
+  background: #3cb0fd;
+  text-decoration: none;
 }
 
 .genre-buttons {
@@ -80,6 +55,11 @@ button:active {
 
 .genre-buttons button {
   margin: 0 1rem;
-
 }
 
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+}

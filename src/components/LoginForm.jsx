@@ -16,8 +16,8 @@ function LoginForm ({setUserLogin}) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <section>
+            <form onSubmit={handleSubmit} className="login-form">
                 <h2>Login</h2>
                 <label>User Name</label>
                 <input type="text"
@@ -33,7 +33,7 @@ function LoginForm ({setUserLogin}) {
                 />
                 <button type="submit">Login</button>
             </form>
-        </div>
+        </section>
     )
 }
 
