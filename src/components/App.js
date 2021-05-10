@@ -6,6 +6,7 @@ import FunFlixHeader from "./FunFlixHeader"
 
 
 function App() {
+  
   return (
     <div className="App">
       <FunFlixHeader />
