@@ -1,9 +1,7 @@
 
 body {
-  font-family: "Fira Code", monospace;
-  font-size: 16px;
-  color: red;
-  background-color: black;
+  min-height: 100vh;
+  background: #111;
 }
 
 .App {
@@ -14,7 +12,7 @@ body {
 
 header {
   width: 100%;
-  min-height: 80;
+  min-height: 80px;
   overflow: hidden;
   display: flex;
   justify-content: space-around;
@@ -62,4 +60,21 @@ button {
   flex-direction: column;
   width: 500px;
   margin: 0 auto;
+}
+
+a.button {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #000000;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+a.button:hover {
+  background: #3cb0fd;
+  text-decoration: none;
 }
