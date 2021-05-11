@@ -5,13 +5,9 @@ function MovieItem ({id, image, title, description, release_date}) {
     const handleClick =()=>history.push(`/movies/${id}`)
     return (
     
-        <li>
-            <div className ="card" onClick={handleClick}>
+        <li className ="card" onClick={handleClick}>
                 <img src={image} alt={title}/>
                 <h3>{title}</h3>
-                
-            </div>
-        
         </li>
        
     )
