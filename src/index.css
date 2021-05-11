@@ -96,6 +96,12 @@ img {
   vertical-align: middle;
 }
 
+.movie-poster{
+  width: 20%;
+  height: auto;
+  vertical-align: middle;
+}
+
 .container {
   text-align: center;
   padding: 10px 20px;

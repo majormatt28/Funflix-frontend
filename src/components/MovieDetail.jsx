@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom'
-
+import CommentForm from "./CommentForm"
 function MovieDetail(){
     const [movie, setMovie] = useState([])
     
@@ -18,17 +18,18 @@ function MovieDetail(){
     const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Comment:{review.comment} posted by: {review.username}</p>)
     console.log(movie.reviews)
     
-    // const addReview=(newReview)=>{
+    const addReview=(newReview)=>{ setMovie([...movie.reviews, newReview])
 
-    // }
+    }
 
     return (
         <div>
             <h1>{title}</h1>
-            <img src={image} alt={title}/>
-            <h4>{description}</h4>
+            <img className="movie-poster" src={image} alt={title}/>
+            <h4>Description: {description}</h4>
             <h4>Release Date: {release_date}</h4>
             {movie.reviews ? renderReview() : "There is no review for this movie yet"}
+            <CommentForm addReview={addReview}/>
         </div>
         
     )
