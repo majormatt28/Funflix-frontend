@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 
 function MovieDetail(){
     const [movie, setMovie] = useState([])
-    console.log(movie.reviews)
+    
     
     const {id} = useParams()
     // console.log(id)
@@ -15,7 +15,10 @@ function MovieDetail(){
     },[id])
 
     const {title, image, release_date, description} = movie
-    // const comment = movie.reviews.map(review=> <h5>Review: {review.comment}</h5>)
+    const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Post by: {review.username} Comment: {review.comment} </p>)
+       
+    
+     
 
     return (
         <div>
@@ -23,7 +26,7 @@ function MovieDetail(){
             <img src={image} alt={title}/>
             <h4>{description}</h4>
             <h4>Release Date: {release_date}</h4>
-            {/* {comment} */}
+            {movie.reviews ? renderReview() : <p>There is no comment yet</p>}
         </div>
         
     )
