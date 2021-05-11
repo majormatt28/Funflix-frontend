@@ -6,11 +6,12 @@ function MovieItem ({id, image, title, description, release_date}) {
     return (
     
         <li>
-            <div onClick={handleClick}>
+            <div className ="card" onClick={handleClick}>
                 <img src={image} alt={title}/>
                 <h3>{title}</h3>
                 
             </div>
+        
         </li>
        
     )

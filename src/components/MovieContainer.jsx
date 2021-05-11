@@ -7,7 +7,6 @@ function MovieContainer() {
    const [allMovies, setAllMovies] = useState([])
    const [filterAllMovie, setFilterAllMovie] = useState("All")
    const [searchMovie, setSearchMovie] = useState("")
-   // console.log("search", searchMovie)
    
    useEffect(()=>{
       fetch("http://127.0.0.1:3001/movies")
@@ -27,11 +26,12 @@ function MovieContainer() {
                                 .map(movie=><MovieItem key={movie.id} {...movie}/> )
 
    return (
-      <div>
+      <div className="container">
    
          <Search searchMovie={searchMovie} setSearchMovie={setSearchMovie} />
          <MovieFilter setFilterAllMovie={setFilterAllMovie} />
          {movieItem}
+  
    
       </div>
    )   

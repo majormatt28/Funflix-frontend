@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-function LoginForm ({setUserLogin}) {
+function LoginForm ({ setUserLogin }) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
    

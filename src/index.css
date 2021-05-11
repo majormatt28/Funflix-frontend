@@ -78,3 +78,31 @@ a.button:hover {
   background: #3cb0fd;
   text-decoration: none;
 }
+
+.card {
+  width: 25%;
+  background-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: initial;
+  justify-content: space-between;
+  display: inline-block;
+  max-width: 100%; 
+  height: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.container {
+  text-align: center;
+  padding: 10px 20px;
+  display: table-row;
+  justify-content: space-between;
+}
+
+.card h3 {
+  color:red;
+}
