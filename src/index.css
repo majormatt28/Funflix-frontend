@@ -106,3 +106,86 @@ img {
 .card h3 {
   color:red;
 }
+
+/* Search Bar */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 50%;
+  margin-top: 3em;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.search-bar {
+    border: 1px solid black;
+    display: flex;
+    border-radius: 100vh;
+    height: 60px;
+    width: 60px;
+    padding: 3px;
+    position: sticky;
+    transition: width 700ms cubic-bezier(.25,-0.12,.56,1.32);
+    overflow: hidden;
+    left: 520px;
+    
+}
+
+.search-bar__input {
+    flex-grow: 1;
+    font-size: 1.5rem;
+    padding: 0 0.5em;
+    border: 0;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    line-height: 60px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.search-bar__search {
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+    border: 0;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border-radius: 50%;
+    margin-left: auto;
+    transition: background 350ms ease-out;
+}
+
+.search-bar__input:focus {
+    outline: 0;
+}
+
+.search-bar:focus-within {
+    width: 50%;
+    border: 1px solid black;
+}
+
+.search-bar:focus-within .search-bar__input {
+    opacity: 1;
+    cursor: initial;
+    width: calc(100% - 90px);
+}
+
+.search-bar:focus-within .search-bar__search {
+   background: black;
+   color: white;
+   cursor: pointer;
+}
+
+.search-bar:focus-within .search-bar__search:hover {
+  background: black;
+  color: black;
+  cursor: pointer;
+}
