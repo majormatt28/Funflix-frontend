@@ -36,7 +36,7 @@ function SignUpForm ({ setUserSignUp }) {
             />
             <label htmlFor="password">Password</label>
             <input 
-               type="text"
+               type="password"
                name="password"
                value={password}
                onChange={(event) => setPassword(event.target.value)}
