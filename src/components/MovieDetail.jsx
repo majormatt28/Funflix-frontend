@@ -13,12 +13,14 @@ function MovieDetail(){
         .then(resp=>resp.json())
         .then(movie=>setMovie(movie))
     },[id])
-
-    const {title, image, release_date, description} = movie
-    const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Post by: {review.username} Comment: {review.comment} </p>)
-       
     
-     
+    const {title, image, release_date, description} = movie
+    const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Comment:{review.comment} posted by: {review.username}</p>)
+    console.log(movie.reviews)
+    
+    // const addReview=(newReview)=>{
+
+    // }
 
     return (
         <div>
@@ -26,7 +28,7 @@ function MovieDetail(){
             <img src={image} alt={title}/>
             <h4>{description}</h4>
             <h4>Release Date: {release_date}</h4>
-            {movie.reviews ? renderReview() : <p>There is no comment yet</p>}
+            {movie.reviews ? renderReview() : "There is no review for this movie yet"}
         </div>
         
     )
