@@ -1,5 +1,5 @@
 import {useState} from "react"
-function CommentForm({addReview}){
+function CommentForm({ addReview }){
     const [comment, setComment] = useState("")
     const [rating, setRating] = useState("")
 
@@ -15,17 +15,20 @@ function CommentForm({addReview}){
             body:JSON.stringify(newReview)
         })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(newReview => addReview(newReview))
+        console.log(newReview)
     }
     return (
         <div>
             <h3>Leave Review</h3>
             <form onSubmit={handleSubmit}>
+                Comment:
                 <input type="text" 
                 name="comment"
                 value={comment}
                 onChange={(e)=>setComment(e.target.value)}/>
                 <br/>
+                Rating:
                 <input type="number" 
                 name="rating"
                 value={rating}
