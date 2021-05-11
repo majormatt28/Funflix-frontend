@@ -11,8 +11,11 @@ function Header () {
             <NavLink className="button" to="/login">
                Login
             </NavLink>
-            <NavLink className="button" to="/sign-up">
+            <NavLink className="button" to="/signup">
                Sign Up
+            </NavLink>
+            <NavLink className="button" to="/movies">
+               All Movies
             </NavLink>
          </nav>
          </div>

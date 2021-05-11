@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {Switch, Route} from "react-router-dom";
 import MovieContainer from "./MovieContainer";
+import MovieDetail from "./MovieDetail"
 import Header from "./Header"
 import SignUpForm from "./SignUpForm";
 import LoginForm from "./LoginForm";
@@ -18,18 +19,28 @@ function App() {
   return (
     <div className="App">
       <Header />
-      
-      <Home /> 
+      <Switch>
+        <Route exact path="/">
+          <Home /> 
+        </Route>
+
+        <Route exact path="/login">
+          <LoginForm setUserLogin={setUserLogin}/> 
+        </Route>
        
-      <LoginForm setUserLogin={setUserLogin}/>  
+        <Route exact path="/signup">
+          <SignUpForm />  
+        </Route>
        
+        <Route exact path="/movies">
+          <MovieContainer />   
+        </Route>        
       
-      
-      <SignUpForm />   
-          
-      <MovieContainer />
-         
-      </div>
+        <Route exact path="/movies/:id">
+          <MovieDetail />   
+        </Route>
+      </Switch>
+    </div>
             
            
           
