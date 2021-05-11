@@ -17,19 +17,24 @@ function App() {
     // },[])
   return (
     <div className="App">
-      <Header />
-      
-      <Home /> 
-       
-      <LoginForm setUserLogin={setUserLogin}/>  
-       
-      
-      
-      <SignUpForm />   
-          
-      <MovieContainer />
-         
-      </div>
+      <Header 
+      title="FunFlix"
+      />
+        {/* <Switch> */}
+          {/* <Route exact path="/"> */}
+            <Home />  
+          {/* </Route> */}
+          <Route exact path="/login">
+            <LoginForm setUserLogin={setUserLogin}/>  
+          </Route>
+          <Route exact path="/sign-up">
+            <SignUpForm />      
+          </Route>
+          {/* <Route exact path="/movies"> */}
+            <MovieContainer />
+          {/* </Route> */}
+         {/* </Switch> */}
+    </div>
             
            
           

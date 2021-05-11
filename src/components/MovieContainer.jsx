@@ -4,7 +4,7 @@ import MovieItem from "./MovieItem"
 function MovieContainer() {
    const [allMovies, setAllMovies] = useState([])
    const [filterAllMovie, setFilterAllMovie] = useState("All")
-   const [searchMovie, setSearchMovie] = useState("")
+   // const [searchMovie, setSearchMovie] = useState("")
    
    useEffect(()=>{
       fetch("http://127.0.0.1:3001/movies")
@@ -19,11 +19,11 @@ function MovieContainer() {
          return movie.genre ===filterAllMovie
       }
    })
-   console.log("Filter",filterMovie)
-   const movieItem = filterMovie.map(movie=><MovieItem key={movie.id} {...movie}/> )
+   console.log("Filter", filterMovie)
+   const movieItem = filterMovie.map(movie => <MovieItem key={movie.id} {...movie}/> )
 
    return (
-      <div>
+      <div className="container">
 
       <MovieFilter setFilterAllMovie={setFilterAllMovie}/>
       {movieItem}
