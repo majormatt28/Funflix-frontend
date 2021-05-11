@@ -14,11 +14,11 @@ function App() {
   console.log(currentUser)
   // console.log(userSignup)
 
-    useEffect(()=>{
-        fetch ("http://127.0.0.1:3001/me")
-        .then (resp=>resp.json())
-        .then (user => setCurrentUser(user))
-    },[])
+    // useEffect(()=>{
+    //     fetch ("http://127.0.0.1:3001/me")
+    //     .then (resp=>resp.json())
+    //     .then (user => setCurrentUser(user))
+    // },[])
 
     // useEffect(() => {
     //   fetch ("http://localhost:3001/users")
@@ -45,7 +45,6 @@ function App() {
        
         <Route exact path="/movies">
           {currentUser ? <MovieContainer />  :null }
-           
         </Route>        
       
         <Route exact path="/movies/:id">

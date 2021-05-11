@@ -2,28 +2,40 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom"
 
 
-function SignUpForm ({ setUserSignUp }) {
+function SignUpForm ({ setCurrentUser}) {
    const [username, setUserName] = useState("");
    const [password, setPassword] = useState("");
    const [age, setAge] = useState(0);
+   const [errors, setErrors] = useState([])
+   
    const history = useHistory()
 
    function handleSubmit(e) {
       e.preventDefault();
 
-      fetch("http://localhost:3001/users", {
+      fetch("http://localhost:3001/signup", {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
             Accept: "application/json"
          },
          body: JSON.stringify({ username, password, age })
+      })    
+      .then (resp => {
+         return resp.json().then(data=>{
+            if (resp.ok){
+               return data
+            }else{
+               throw data
+            }
+            })
       })
-         .then(r => r.json())
-         .then(newUser => {
-            setUserSignUp(newUser);
-            history.push(`/login`)
-         })
+      .then (user => {
+         setCurrentUser(user)
+            history.push("/login")
+      })
+      .catch(error => console.log(error))
+         
    }
 
    return (
@@ -51,6 +63,7 @@ function SignUpForm ({ setUserSignUp }) {
                value={age}
                onChange={(event) => setAge(event.target.value)}
             />
+            {/* {errors.map(error=><h3 style={{color:"black"}} key={error}>{error}</h3>)} */}
             <button type="submit">Sign Up</button>
          </form>
       </section>
