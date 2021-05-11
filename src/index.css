@@ -128,7 +128,7 @@ img {
     height: 60px;
     width: 60px;
     padding: 3px;
-    position: relative;
+    position: sticky;
     transition: width 700ms cubic-bezier(.25,-0.12,.56,1.32);
     overflow: hidden;
     left: 520px;
