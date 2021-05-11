@@ -11,7 +11,7 @@ import Home from "./Home";
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [userSignup, setUserSignUp] = useState(null)
-  console.log(currentUser)
+  // console.log(currentUser)
   // console.log(userSignup)
 
     useEffect(()=>{
@@ -50,7 +50,6 @@ function App() {
       
         <Route exact path="/movies/:id">
           {currentUser ? <MovieDetail currentUser = {currentUser}/> :null  }
-            
         </Route>
       </Switch>
     </div>

@@ -4,7 +4,7 @@ import CommentForm from "./CommentForm"
 
 function MovieDetail({currentUser}){
     const [movie, setMovie] = useState([])
-    console.log("movieDetail",currentUser)
+    // console.log("movieDetail",currentUser)
     
     const {id} = useParams()
    
@@ -18,11 +18,12 @@ function MovieDetail({currentUser}){
     const {title, image, release_date, description} = movie
     
     
-    const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Comment:{review.comment} <br/> Rating:{review.rating} <br/> Posted by: {review.username}</p>)
+    const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Comment: {review.comment} <br/> Rating: {review.rating} <br/> Posted by: {review.username}</p>)
     // console.log(movie.reviews)
-    console.log("MovieDetail", movie)
-    const addReview=(newReview)=>{ setMovie([...movie.reviews, newReview])
-
+    // console.log("MovieDetail", movie)
+    const addReview=(newReview)=>{ 
+        const updatedReviews = [...movie.reviews, newReview]
+        setMovie({...movie, reviews : updatedReviews})
     }
 
     return (

@@ -1,11 +1,16 @@
 import {useState} from "react"
-function CommentForm({addReview, currentUser, movie}){
+
+function CommentForm({ addReview, currentUser, movie }){
     const [comment, setComment] = useState("")
     const [rating, setRating] = useState("")
     // console.log(currentUser)
     // console.log("comment form", movie)
     const handleSubmit=(e)=>{
+        
         e.preventDefault()
+        setComment("")
+        setRating("")
+        
         const newReview = {
             comment, rating,
             user_id: currentUser.id,
@@ -20,21 +25,30 @@ function CommentForm({addReview, currentUser, movie}){
         .then(resp => resp.json())
         .then(data => addReview(data))
     }
+
     return (
         <div>
-            <h3>Leave Review</h3>
-            <form onSubmit={handleSubmit}>
-                Comment:
-                <input type="text" 
+            <h3>Leave a Review:</h3>
+            <form className="form" onSubmit={handleSubmit}>
+                <label htmlFor="comment">Comment: </label>
+                <input 
+                type="text" 
+                id="comment"
                 name="comment"
                 value={comment}
-                onChange={(e)=>setComment(e.target.value)}/>
+                onChange={(e)=>setComment(e.target.value)}
+                />
+                
                 <br/>
-                Rating:
-                <input type="number" 
+                <label htmlFor="rating">Rating: </label>
+                <input 
+                type="number" 
+                id="rating"
                 name="rating"
                 value={rating}
-                onChange={(e)=>setRating(e.target.value)}/>
+                onChange={(e)=>setRating(e.target.value)}
+                />
+                
                 <br/>
                 <button type="submit">Add Review</button>
             </form>
