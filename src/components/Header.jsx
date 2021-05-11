@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 
-function Header () {
+function Header ({currentUser}) {
    return (
       <header>
          <div className="logo">
@@ -8,15 +8,22 @@ function Header () {
             FunFlix
          </h1>
          <nav>
-            <NavLink className="button" to="/login">
-               Login
-            </NavLink>
-            <NavLink className="button" to="/signup">
-               Sign Up
-            </NavLink>
-            <NavLink className="button" to="/movies">
+            {currentUser? (
+               <NavLink className="button" to="/movies">
                All Movies
             </NavLink>
+            ):(
+            <>
+               <NavLink className="button" to="/login">
+                  Login
+               </NavLink>
+               <NavLink className="button" to="/signup">
+                  Sign Up
+               </NavLink>
+            </>
+            )}
+            
+            
          </nav>
          </div>
       </header>

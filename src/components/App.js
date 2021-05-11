@@ -9,16 +9,16 @@ import Home from "./Home";
 
 
 function App() {
-  const [userLogin, setUserLogin] = useState(null)
+  const [currentUser, setCurrentUser] = useState(null)
   const [userSignup, setUserSignUp] = useState(null)
-  console.log(userLogin)
+  console.log(currentUser)
   // console.log(userSignup)
 
-    // useEffect(()=>{
-    //     fetch ("http://127.0.0.1:3001/me")
-    //     .then (resp=>resp.json())
-    //     .then (user => setUserLogin(user))
-    // },[])
+    useEffect(()=>{
+        fetch ("http://127.0.0.1:3001/me")
+        .then (resp=>resp.json())
+        .then (user => setCurrentUser(user))
+    },[])
 
     // useEffect(() => {
     //   fetch ("http://localhost:3001/users")
@@ -28,14 +28,15 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header  currentUser={currentUser}/>
+      
       <Switch>
         <Route exact path="/">
           <Home /> 
         </Route>
 
         <Route exact path="/login">
-          <LoginForm setUserLogin={setUserLogin}/> 
+          <LoginForm setCurrentUser={setCurrentUser}/> 
         </Route>
        
         <Route exact path="/signup">
@@ -43,11 +44,13 @@ function App() {
         </Route>
        
         <Route exact path="/movies">
-          <MovieContainer />   
+          {currentUser ? <MovieContainer />  :null }
+           
         </Route>        
       
         <Route exact path="/movies/:id">
-          <MovieDetail />   
+          {currentUser ? <MovieDetail currentUser = {currentUser}/> :null  }
+            
         </Route>
       </Switch>
     </div>

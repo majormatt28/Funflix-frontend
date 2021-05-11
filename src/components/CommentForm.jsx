@@ -1,12 +1,15 @@
 import {useState} from "react"
-function CommentForm({addReview}){
+function CommentForm({addReview, currentUser, movie}){
     const [comment, setComment] = useState("")
     const [rating, setRating] = useState("")
-
+    // console.log(currentUser)
+    // console.log("comment form", movie)
     const handleSubmit=(e)=>{
         e.preventDefault()
         const newReview = {
-            comment, rating
+            comment, rating,
+            user_id: currentUser.id,
+            movie_id: movie.id
         }
 
         fetch("http://127.0.0.1:3001/reviews", {
@@ -15,7 +18,7 @@ function CommentForm({addReview}){
             body:JSON.stringify(newReview)
         })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => addReview(data))
     }
     return (
         <div>

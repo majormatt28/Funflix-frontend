@@ -1,9 +1,10 @@
 import {useState} from "react";
+import {useHistory} from "react-router-dom"
 
-function LoginForm ({ setUserLogin }) {
+function LoginForm ({ setCurrentUser }) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-   
+    const history = useHistory()
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -12,7 +13,9 @@ function LoginForm ({ setUserLogin }) {
             method: "POST",
         })
         .then (resp => resp.json())
-        .then (user => setUserLogin(user))
+        .then (user => {setCurrentUser(user)
+                        history.push("/movies")
+        })
     }
 
     return (

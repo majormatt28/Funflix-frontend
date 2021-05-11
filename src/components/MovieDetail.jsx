@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom'
 import CommentForm from "./CommentForm"
-function MovieDetail(){
+
+function MovieDetail({currentUser}){
     const [movie, setMovie] = useState([])
-    
+    console.log("movieDetail",currentUser)
     
     const {id} = useParams()
-    // console.log(id)
+   
 
     useEffect(()=>{
         fetch (`http://127.0.0.1:3001/movies/${id}`)
@@ -15,9 +16,11 @@ function MovieDetail(){
     },[id])
     
     const {title, image, release_date, description} = movie
-    const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Comment:{review.comment} posted by: {review.username}</p>)
-    console.log(movie.reviews)
     
+    
+    const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Comment:{review.comment} posted by: {review.username}</p>)
+    // console.log(movie.reviews)
+    console.log("MovieDetail", movie)
     const addReview=(newReview)=>{ setMovie([...movie.reviews, newReview])
 
     }
@@ -29,7 +32,7 @@ function MovieDetail(){
             <h4>Description: {description}</h4>
             <h4>Release Date: {release_date}</h4>
             {movie.reviews ? renderReview() : "There is no review for this movie yet"}
-            <CommentForm addReview={addReview}/>
+            <CommentForm addReview={addReview} currentUser = {currentUser} movie={movie}/>
         </div>
         
     )
