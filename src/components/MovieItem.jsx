@@ -1,11 +1,14 @@
-import {Link} from "react-router-dom"
+import {useHistory} from "react-router-dom"
 function MovieItem ({id, image, title, description, release_date}) {
+    
+    const history = useHistory()
+    const handleClick =()=>history.push(`/movies/${id}`)
     return (
     
         <li>
-            <div>
+            <div onClick={handleClick}>
                 <img src={image} alt={title}/>
-                <Link to={`/movies/${id}`}><h3>{title}</h3></Link>
+                <h3>{title}</h3>
                 
             </div>
         </li>
