@@ -15,7 +15,7 @@ function MovieDetail({currentUser}){
         .then(movie=>setMovie(movie))
     },[id])
     
-    const {title, image, release_date, description} = movie
+    const {title, image, release_date, description, genre} = movie
     
     
     const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Comment:{review.comment} posted by: {review.username}</p>)
@@ -30,6 +30,7 @@ function MovieDetail({currentUser}){
             <h1>{title}</h1>
             <img className="movie-poster" src={image} alt={title}/>
             <h4>Description: {description}</h4>
+            <h4>Genre: {genre}</h4>
             <h4>Release Date: {release_date}</h4>
             {movie.reviews ? renderReview() : "There is no review for this movie yet"}
             <CommentForm addReview={addReview} currentUser = {currentUser} movie={movie}/>

@@ -2,12 +2,11 @@ import {useState} from "react"
 function CommentForm({addReview, currentUser, movie}){
     const [comment, setComment] = useState("")
     const [rating, setRating] = useState("")
-    // console.log(currentUser)
-    // console.log("comment form", movie)
+    
     const handleSubmit=(e)=>{
         e.preventDefault()
         const newReview = {
-            comment, rating,
+            comment, rating, 
             user_id: currentUser.id,
             movie_id: movie.id
         }
