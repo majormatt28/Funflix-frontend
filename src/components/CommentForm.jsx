@@ -24,11 +24,13 @@ function CommentForm({addReview, currentUser, movie}){
         <div>
             <h3>Leave Review</h3>
             <form onSubmit={handleSubmit}>
+                Comment:
                 <input type="text" 
                 name="comment"
                 value={comment}
                 onChange={(e)=>setComment(e.target.value)}/>
                 <br/>
+                Rating:
                 <input type="number" 
                 name="rating"
                 value={rating}

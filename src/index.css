@@ -22,10 +22,14 @@ header {
 }
 
 .logo {
-  font-size: 2em;
+  width: 10%;
   color: red;
   margin-left: 100px;
 }
+
+/* .logo {
+  
+} */
 
 button {
   -webkit-border-radius: 28;

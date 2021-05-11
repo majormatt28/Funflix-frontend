@@ -1,12 +1,10 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import logo from "./logo.png";
 
 function Header ({currentUser}) {
    return (
       <header>
-         <div className="logo">
-         <h1>
-            FunFlix
-         </h1>
+         <img className="logo" src={logo} alt="logo"/>
          <nav>
             {currentUser? (
                <NavLink className="button" to="/movies">
@@ -25,7 +23,6 @@ function Header ({currentUser}) {
             
             
          </nav>
-         </div>
       </header>
    )
 }
