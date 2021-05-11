@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom"
 
 
 function SignUpForm ({ setUserSignUp }) {
    const [username, setUserName] = useState("");
    const [password, setPassword] = useState("");
    const [age, setAge] = useState(0);
+   const history = useHistory()
 
    function handleSubmit(e) {
       e.preventDefault();
@@ -20,6 +22,7 @@ function SignUpForm ({ setUserSignUp }) {
          .then(r => r.json())
          .then(newUser => {
             setUserSignUp(newUser);
+            history.push(`/login`)
          })
    }
 
