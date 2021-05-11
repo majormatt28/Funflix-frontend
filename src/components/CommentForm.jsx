@@ -37,7 +37,6 @@ function CommentForm({addReview, currentUser, movie}){
                 <br/>
                 <button type="submit">Add Review</button>
             </form>
-
         </div>
     )
 }
