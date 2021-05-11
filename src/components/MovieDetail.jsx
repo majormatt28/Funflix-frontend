@@ -18,7 +18,7 @@ function MovieDetail({currentUser}){
     const {title, image, release_date, description} = movie
     
     
-    const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Comment:{review.comment} posted by: {review.username}</p>)
+    const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Comment:{review.comment} <br/> Rating:{review.rating} <br/> Posted by: {review.username}</p>)
     // console.log(movie.reviews)
     console.log("MovieDetail", movie)
     const addReview=(newReview)=>{ setMovie([...movie.reviews, newReview])
