@@ -1,12 +1,12 @@
 import {useState} from "react"
 function CommentForm({addReview}){
-    const [review, setReview] = useState("")
+    const [comment, setComment] = useState("")
     const [rating, setRating] = useState("")
 
     const handleSubmit=(e)=>{
         e.preventDefault()
         const newReview = {
-            review, rating
+            comment, rating
         }
 
         fetch("http://127.0.0.1:3001/reviews", {
@@ -22,9 +22,9 @@ function CommentForm({addReview}){
             <h3>Leave Review</h3>
             <form onSubmit={handleSubmit}>
                 <input type="text" 
-                name="review"
-                value={review}
-                onChange={(e)=>setReview(e.target.value)}/>
+                name="comment"
+                value={comment}
+                onChange={(e)=>setComment(e.target.value)}/>
                 <br/>
                 <input type="number" 
                 name="rating"

@@ -46,7 +46,6 @@ function App() {
           <MovieContainer />   
         </Route>        
       
-      
         <Route exact path="/movies/:id">
           <MovieDetail />   
         </Route>
