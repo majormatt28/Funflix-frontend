@@ -42,7 +42,7 @@ function MovieDetail({currentUser}){
     }
 
     return (
-        <div>
+        <div className="movie-card">
             <h1>{title}</h1>
             <img className="movie-poster" src={image} alt={title}/>
             <h4>Description: {description}</h4>
