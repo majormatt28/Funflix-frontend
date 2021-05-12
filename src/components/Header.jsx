@@ -30,8 +30,6 @@ function Header ({currentUser, setCurrentUser}) {
                   </NavLink>
                </>
             )}
-            
-            
          </nav>
       </header>
    )
