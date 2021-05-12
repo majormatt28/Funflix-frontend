@@ -20,8 +20,6 @@ function Header ({currentUser}) {
                </NavLink>
             </>
             )}
-            
-            
          </nav>
       </header>
    )
