@@ -3,7 +3,7 @@ function CommentDetails({user_id, comment, rating, username, currentUser, id, de
 
     console.log("currentUser", currentUser)
     console.log("user_id", user_id)
-    console.log("id", id)
+    console.log("review id", id)
 
     const handleDelete=()=>{
         fetch(`http://127.0.0.1:3001/reviews/${id}`,{
@@ -13,9 +13,9 @@ function CommentDetails({user_id, comment, rating, username, currentUser, id, de
     }
     return(
         <div className="comment-detail">
-            <p>Comment: {comment}</p>
-            <p>Rating: {rating}</p>
-            <p>Posted by: {username}</p>
+            <h4>Comment: {comment}</h4>
+            <h4>Rating: {rating}</h4>
+            <h4>Posted by: {username}</h4>
             {user_id === currentUser.id ? (
             <>
                 <button>Update Review</button>
@@ -23,7 +23,6 @@ function CommentDetails({user_id, comment, rating, username, currentUser, id, de
                 
             </>
             ): null}
-            
         </div>
     )
 }
