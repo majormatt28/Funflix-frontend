@@ -42,29 +42,37 @@ function SignUpForm ({ setCurrentUser}) {
 
    return (
       <section>
-         <form onSubmit={handleSubmit} className="signup-form">
-            <h3>Please fill out Sign Up Form</h3>
-            <label htmlFor="username">UserName</label>
+         <form onSubmit={handleSubmit} className="signup-box">
+            <h2>Please fill out Sign Up Form</h2>
+            <div className="user-box">
+            <label htmlFor="username">UserName: </label>
             <input
                type="text"
                name="username"
                value={username}
                onChange={(event) => setUserName(event.target.value)}
             />
-            <label htmlFor="password">Password</label>
+            </div>
+            <br/>
+            <div className="user-box">
+            <label htmlFor="password">Password: </label>
             <input 
                type="password"
                name="password"
                value={password}
                onChange={(event) => setPassword(event.target.value)}
             />
-            <label htmlFor="age">Age</label>
+            </div>
+            <div className="user-box">
+            <label htmlFor="age">Age: </label>
             <input 
                type="number"
                name="age"
                value={age}
                onChange={(event) => setAge(event.target.value)}
             />
+            </div>
+            <br/>
             {errors.map(error=><h3 key={error} style={{color:"black"}}>{error}</h3>)}
             <button type="submit">Sign Up</button>
          </form>

@@ -36,21 +36,28 @@ function LoginForm ({ setCurrentUser }) {
 
     return (
         <section>
-            <form onSubmit={handleSubmit} className="login-form">
+            <form onSubmit={handleSubmit} className="login-box">
                 <h2>Login</h2>
-                <label>User Name</label>
+                <div className="user-box">
+                <label>User Name: </label>
                 <input type="text"
                     name="username"
                     value={username}
                     onChange={(e)=>setUsername(e.target.value)}
                 />
-                <label>Password</label>
+                </div>
+                <br/>
+                <div className="user-box">
+                <label>Password: </label>
                 <input type="password"
                     name="password"
                     value={password}
                     onChange={(e)=>setPassword(e.target.value)}
                 />
+                </div>
+                <br/>
                 {errors.map(error=><h3 style={{color:"black"}} key={error}>{error}</h3>)}
+                <br/>
                 <button type="submit">Login</button>
             </form>
         </section>

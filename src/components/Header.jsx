@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import {useHistory} from "react-router-dom";
-import logo from "./logo.png";
+
 
 function Header ({currentUser, setCurrentUser}) {
    const history = useHistory()
@@ -11,13 +11,15 @@ function Header ({currentUser, setCurrentUser}) {
    }
    return (
       <header>
-         <img className="logo" src={logo} alt="logo"/>
+         <div className="logo">
+         <h1>FunFlix</h1>
+         </div>
          <nav>
             {currentUser? (
                <>
-               {/* <NavLink className="button" to="/movies">
+               <NavLink className="button" to="/movies">
                All Movies
-            </NavLink> */}
+            </NavLink>
                <button onClick={logout}className="button" >Logout</button>
                </>
             ):(
