@@ -41,7 +41,8 @@ function CommentDetail({user_id, comment, rating, username, currentUser, id, del
             ): null}
         </div>
         <div>
-            <form onSubmit={editReviewSubmit}>
+            <form className="update-form" onSubmit={editReviewSubmit}>
+            <label htmlFor="comment">Comment: </label>
             <input 
                 type="text" 
                 id="comment"
@@ -49,7 +50,6 @@ function CommentDetail({user_id, comment, rating, username, currentUser, id, del
                 value={newComment}
                 onChange={(e)=>setNewComment(e.target.value)}
                 />
-                
                 <br/>
                 <label htmlFor="rating">Rating: </label>
                 <input 
@@ -59,7 +59,6 @@ function CommentDetail({user_id, comment, rating, username, currentUser, id, del
                 value={newRating}
                 onChange={(e)=>setNewRating(e.target.value)}
                 />
-                
                 <br/>
                 <button type="submit">Update</button>
             </form>

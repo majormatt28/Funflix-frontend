@@ -30,6 +30,7 @@ function MovieDetail({currentUser}){
                 return {review}
             }
         })
+        console.log(update)
     }
     const deleteReview=(reviewId)=>{
         const removeReview = movie.reviews.filter(review=>review.id !== reviewId)

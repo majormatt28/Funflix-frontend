@@ -49,25 +49,28 @@ button {
 }
 
 .genre-buttons {
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
+  top: 94px;
+  left: 561px;
 }
 
 .genre-buttons button {
   margin: 0 1rem;
 }
 
-.form{
+/* .review-form{
   display: flex;
   flex-direction: column;
   width: 320px;
   margin: 0 auto;
-}
+} */
 
 a.button.active {
-  margin-left: -502px;
+  margin-left: -542px;
 }
 
 a.button {
@@ -357,6 +360,7 @@ html, body {
 
 h2 {
   color: red;
+  width: 50%;
 }
 
 p {
@@ -364,7 +368,7 @@ p {
 }
 
 /* Inside each Movie Card */
-.comment-detail {
+/* .comment-detail {
   position: initial;
   top: 50%;
   left: 80%;
@@ -386,7 +390,7 @@ p {
 .comment-form {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 32%;
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
@@ -413,3 +417,17 @@ p {
 h4 {
   color: black;
 }
+
+.update-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+} */
+
