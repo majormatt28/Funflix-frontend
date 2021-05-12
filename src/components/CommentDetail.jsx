@@ -1,5 +1,5 @@
 
-function CommentDetails({user_id, comment, rating, username, currentUser, id, deleteReview}){
+function CommentDetail({user_id, comment, rating, username, currentUser, id, deleteReview}){
 
     console.log("currentUser", currentUser)
     console.log("user_id", user_id)
@@ -26,4 +26,4 @@ function CommentDetails({user_id, comment, rating, username, currentUser, id, de
     )
 }
 
-export default CommentDetails;
+export default CommentDetail;

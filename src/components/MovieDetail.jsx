@@ -53,9 +53,9 @@ function MovieDetail({currentUser}){
         <div className="movie-card">
             <h1>{title}</h1>
             <img className="movie-poster" src={image} alt={title}/>
-            <h4>Description: {description}</h4>
-            <h4>Genre: {genre}</h4>
-            <h4>Release Date: {release_date}</h4>
+            <h2>Description: {description}</h2>
+            <h2>Genre: {genre}</h2>
+            <h2>Release Date: {release_date}</h2>
 
             {movie.reviews ? renderReview() : "There is no review for this movie yet"}
             {/* <CommentContainer currentUser={currentUser} movie={movie}/> */}
