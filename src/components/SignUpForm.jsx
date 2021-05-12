@@ -8,6 +8,7 @@ function SignUpForm ({ setCurrentUser}) {
    const [age, setAge] = useState(0);
    const [errors, setErrors] = useState([])
    
+   
    const history = useHistory()
 
    function handleSubmit(e) {
@@ -30,12 +31,13 @@ function SignUpForm ({ setCurrentUser}) {
             }
             })
       })
-      .then (user => {
+      .then (data => {
+         const {user, token} = data
+         localStorage.setItem("token", token)
          setCurrentUser(user)
-            history.push("/login")
-      })
-      .catch(error => console.log(error))
-         
+         history.push("/login")
+     })
+     .catch(error => setErrors(error.errors)) 
    }
 
    return (
@@ -63,7 +65,7 @@ function SignUpForm ({ setCurrentUser}) {
                value={age}
                onChange={(event) => setAge(event.target.value)}
             />
-            {/* {errors.map(error=><h3 style={{color:"black"}} key={error}>{error}</h3>)} */}
+            {errors.map(error=><h3 key={error} style={{color:"black"}}>{error}</h3>)}
             <button type="submit">Sign Up</button>
          </form>
       </section>

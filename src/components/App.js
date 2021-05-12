@@ -10,25 +10,29 @@ import Home from "./Home";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
-  const [userSignup, setUserSignUp] = useState(null)
-  // console.log(currentUser)
-  // console.log(userSignup)
+  console.log(currentUser)
 
-    // useEffect(()=>{
-    //     fetch ("http://127.0.0.1:3001/me")
-    //     .then (resp=>resp.json())
-    //     .then (user => setCurrentUser(user))
-    // },[])
+    useEffect(()=>{
+      const token = localStorage.getItem("token")
+      fetch ("http://127.0.0.1:3001/me", {
+        headers: {"Authorization": `Bearer ${token}`}
+      })
+      .then (resp => {
+        return resp.json().then(data=>{
+            if (resp.ok){
+                return data
+            }else{
+                throw data
+            }
+        })
+    })
+      .then (user => setCurrentUser(user))
+    },[])
 
-    // useEffect(() => {
-    //   fetch ("http://localhost:3001/users")
-    //     .then (r => r.json())
-    //     .then (data => setUserSignUp(data))
-    // },[])
 
   return (
     <div className="App">
-      <Header  currentUser={currentUser}/>
+      <Header  currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       
       <Switch>
         <Route exact path="/">
@@ -40,7 +44,7 @@ function App() {
         </Route>
        
         <Route exact path="/signup">
-          <SignUpForm setUserSignUp={setUserSignUp}/>  
+          <SignUpForm setCurrentUser={setCurrentUser}/>  
         </Route>
        
         <Route exact path="/movies">
@@ -49,6 +53,7 @@ function App() {
       
         <Route exact path="/movies/:id">
           {currentUser ? <MovieDetail currentUser = {currentUser}/> :null  }
+            
         </Route>
       </Switch>
     </div>

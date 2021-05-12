@@ -24,7 +24,10 @@ function LoginForm ({ setCurrentUser }) {
                 }
             })
         })
-        .then (user => {
+        .then (data => {
+            // console.log(data)
+            const {user, token} = data
+            localStorage.setItem("token", token)
             setCurrentUser(user)
             history.push("/movies")
         })
