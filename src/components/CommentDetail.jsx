@@ -20,6 +20,7 @@ function CommentDetails({user_id, comment, rating, username, currentUser, id, de
             <>
                 <button>Update Review</button>
                 <button onClick={handleDelete}>Delete Review</button>
+                
             </>
             ): null}
             

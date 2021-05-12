@@ -20,9 +20,11 @@ function MovieDetail({currentUser}){
     
     const renderReview =() => movie.reviews.map(review=>{
         return (console.log("review",review),
+
     <CommentDetail key= {review.id} {...review} currentUser={currentUser} 
         movie={movie} 
-        deleteReview={deleteReview}/>) 
+        deleteReview={deleteReview}
+        />) 
     })
     // console.log("review",typeof review)
         // {review.comment} 
@@ -41,7 +43,7 @@ function MovieDetail({currentUser}){
     const addNewReview=(newReview)=>{ 
         const updatedReviews = [...movie.reviews, newReview]
         // render movie object 
-        setMovie({...movie, reviews : updatedReviews})
+        setMovie({...movie, updatedReviews})
     }
 
     const deleteReview=(reviewId)=>{
