@@ -24,6 +24,7 @@ function MovieDetail({currentUser}){
     <CommentDetail key= {review.id} {...review} currentUser={currentUser} 
         movie={movie} 
         deleteReview={deleteReview}
+        updateReview={updateReview}
         />) 
     })
     // console.log("review",typeof review)
@@ -43,9 +44,18 @@ function MovieDetail({currentUser}){
     const addNewReview=(newReview)=>{ 
         const updatedReviews = [...movie.reviews, newReview]
         // render movie object 
-        setMovie({...movie, updatedReviews})
+        setMovie({...movie, reviews: updatedReviews})
     }
 
+    const updateReview=(reviewId)=>{
+        const update = movie.reviews.map(review=>{
+            if (review.id===reviewId){
+                return {...movie,reviews:update}
+            }else{
+                return {review}
+            }
+        })
+    }
     const deleteReview=(reviewId)=>{
         const removeReview = movie.reviews.filter(review=>review.id !== reviewId)
         setMovie({...movie, reviews: removeReview})
@@ -60,7 +70,6 @@ function MovieDetail({currentUser}){
             <h4>Release Date: {release_date}</h4>
 
             {movie.reviews ? renderReview() : "There is no review for this movie yet"}
-            {/* <CommentContainer currentUser={currentUser} movie={movie}/> */}
             <CommentForm addReview={addNewReview} currentUser = {currentUser} movie={movie}/>
         </div>
         

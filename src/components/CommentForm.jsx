@@ -4,6 +4,7 @@ function CommentForm({ addReview, currentUser, movie }){
     const [comment, setComment] = useState("")
     const [rating, setRating] = useState("")
     
+    
     const handleSubmit=(e)=>{
         
         e.preventDefault()
