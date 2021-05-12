@@ -1,28 +1,43 @@
 import React, { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom'
+// import CommentContainer from "./CommentContainer";
 import CommentForm from "./CommentForm"
+import CommentDetail from "./CommentDetail"
 
 function MovieDetail({currentUser}){
     const [movie, setMovie] = useState([])
-    // console.log("movieDetail",currentUser)
-    
     const {id} = useParams()
+    // console.log("movieDetail-Current User", currentUser)
    
-
     useEffect(()=>{
         fetch (`http://127.0.0.1:3001/movies/${id}`)
         .then(resp=>resp.json())
         .then(movie=>setMovie(movie))
     },[id])
-    
+    console.log("movie", movie)
+
     const {title, image, release_date, description, genre} = movie
     
+    const renderReview =() => movie.reviews.map(review=>{
+        return (console.log("review",review),
+    <CommentDetail key= {review.id} {...review} currentUser={currentUser} movie={movie} />) })
+    // console.log("review",typeof review)
+        // {review.comment} 
+    //  {review.rating} 
+    //  {review.username}/>
+    // {/* {currentUser? (
+    //     <>
+    //     <button>Edit Comment</button>
+    //     <button>Delete Comment</button>
+    //     </>
+    // ): null}
     
-    const renderReview=()=>movie.reviews.map(review=><p key={review.id}>Comment: {review.comment} <br/> Rating: {review.rating} <br/> Posted by: {review.username}</p>)
-    // console.log(movie.reviews)
-    // console.log("MovieDetail", movie)
-    const addReview=(newReview)=>{ 
+    // </div> */}
+    
+   
+    const addNewReview=(newReview)=>{ 
         const updatedReviews = [...movie.reviews, newReview]
+        // render movie object 
         setMovie({...movie, reviews : updatedReviews})
     }
 
@@ -33,8 +48,10 @@ function MovieDetail({currentUser}){
             <h4>Description: {description}</h4>
             <h4>Genre: {genre}</h4>
             <h4>Release Date: {release_date}</h4>
+
             {movie.reviews ? renderReview() : "There is no review for this movie yet"}
-            <CommentForm addReview={addReview} currentUser = {currentUser} movie={movie}/>
+            {/* <CommentContainer currentUser={currentUser} movie={movie}/> */}
+            <CommentForm addReview={addNewReview} currentUser = {currentUser} movie={movie}/>
         </div>
         
     )
