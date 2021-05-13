@@ -6,13 +6,16 @@ import CommentDetail from "./CommentDetail"
 
 function MovieDetail({currentUser}){
     const [movie, setMovie] = useState([])
+    // const [review, setReview] = useState([])
     const {id} = useParams()
     // console.log("movieDetail-Current User", currentUser)
    
     useEffect(()=>{
         fetch (`http://127.0.0.1:3001/movies/${id}`)
         .then(resp=>resp.json())
-        .then(movie=>setMovie(movie))
+        .then(movie=>{setMovie(movie)
+                    //   setReview(movie.reviews)
+        })
     },[id])
 
     const addNewReview=(newReview)=>{ 
