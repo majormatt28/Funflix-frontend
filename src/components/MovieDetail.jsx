@@ -53,15 +53,18 @@ function MovieDetail({currentUser}){
    
 
     return (
+        <div className="movie-container">
         <div className="movie-card">
             <h1 className="title">{title}</h1>
             <img className="movie-poster" src={image} alt={title}/>
             <h2 className="movie-desc">Description: {description}</h2>
             <h2 className="movie-genre">Genre: {genre}</h2>
             <h2 className="movie-date">Release Date: {release_date}</h2>
-
-            {movie.reviews ? renderReview() : "There is no review for this movie yet"}
+            </div>
+            <div className="comment">
             <CommentForm addReview={addNewReview} currentUser = {currentUser} movie={movie}/>
+            {movie.reviews ? renderReview() : "There is no review for this movie yet"}
+        </div>
         </div>
         
     )
