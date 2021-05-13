@@ -56,6 +56,7 @@ function CommentDetail({user_id, comment, rating, username, currentUser, id, del
                     name="comment"
                     value={newComment}
                     onChange={(e)=>setNewComment(e.target.value)}
+                    required
                     />
                     <br/>
                     <label className="updated-rating" htmlFor="rating">Rating: </label>
@@ -65,6 +66,7 @@ function CommentDetail({user_id, comment, rating, username, currentUser, id, del
                     name="rating"
                     value={newRating}
                     onChange={(e)=>setNewRating(e.target.value)}
+                    required
                     />
                     <br/>
                     {user_id === currentUser.id && <button type="submit">Update</button>}
