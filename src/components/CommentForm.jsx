@@ -28,7 +28,7 @@ function CommentForm({ addReview, currentUser, movie }){
 
     return (
         <div className="comment-form">
-            <h3>Leave a Review:</h3>
+            <h3>Leave a Comment:</h3>
             <form className="review-form" onSubmit={handleSubmit}>
                 <label htmlFor="comment">Comment: </label>
                 <input 
