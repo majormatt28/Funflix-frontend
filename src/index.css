@@ -67,13 +67,6 @@ button {
   margin: 0 1rem;
 }
 
-/* .review-form{
-  display: flex;
-  flex-direction: column;
-  width: 320px;
-  margin: 0 auto;
-} */
-
 .main-menu-button {
   margin-left: -680px;
 }
@@ -416,43 +409,8 @@ p {
 
 /* Inside each Movie Card */
 
-.title {
-  color: black;
-}
-
-/* .comment-detail {
-  position: initial;
-  top: 50%;
-  left: 80%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(295%, -297%);
-  background: rgba(255, 255, 255, 0.877);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.836);
-  border-radius: 10px;
-} */
-
-.movie-poster{
-  width: 20%;
-  height: auto;
-  vertical-align: middle;
-}
-
-/* .comment-form {
-  position: absolute;
-  top: 50%;
-  left: 32%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.877);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.836);
-  border-radius: 10px;
-} */
-
-/* .movie-card {
+.movie-card {
+  /* display: grid; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -464,13 +422,51 @@ p {
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
-} */
+}
 
-/* h4 {
-  color: black;
-} */
+.title {
+  /* grid-area: header; */
+  color: red;
+}
 
-/* .update-form {
+.movie-poster{
+  /* grid-area: main; */
+  width: 20%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.comment-detail {
+  /* grid-area: sidebar; */
+  position: initial;
+  top: 50%;
+  left: 80%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(295%, -297%);
+  background: rgba(255, 255, 255, 0.877);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.836);
+  border-radius: 10px;
+}
+
+
+.comment-form {
+  /* grid-area: footer; */
+  position: absolute;
+  top: 50%;
+  left: 32%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.877);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.836);
+  border-radius: 10px;
+}
+
+.update-form {
+  /* grid-area: footer; */
   position: absolute;
   top: 50%;
   left: 32%;
@@ -481,5 +477,22 @@ p {
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(255, 255, 255, 0.836);
   border-radius: 10px;
-} */
+}
+
+.movie-desc {
+  color: red;
+}
+
+.movie-genre {
+  color: red;
+}
+
+.movie-date {
+  color: red;
+}
+
+h4 {
+  color: black;
+}
+
 
