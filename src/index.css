@@ -21,6 +21,11 @@ header {
   position: relative;
 }
 
+.lgn-sgn-button {
+  margin-left: -680px;
+  
+}
+
 .logo {
   font-size: 2em;
   color: red;
@@ -55,7 +60,7 @@ button {
   justify-content: center;
   padding: 1rem;
   top: 94px;
-  left: 561px;
+  left: 800px;
 }
 
 .genre-buttons button {
@@ -69,8 +74,8 @@ button {
   margin: 0 auto;
 } */
 
-a.button.active {
-  margin-left: -542px;
+.main-menu-button {
+  margin-left: -680px;
 }
 
 a.button {
@@ -87,6 +92,18 @@ a.button {
 
 a.button:hover {
   background: #3cb0fd;
+  text-decoration: none;
+}
+
+a.button.active {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #000000;
+  padding: 10px 20px 10px 20px;
   text-decoration: none;
 }
 
@@ -124,6 +141,7 @@ img {
 }
 
 h1 {
+  color: red;
   text-align: center;
 }
 
@@ -304,6 +322,26 @@ html, body {
   background: transparent;
 }
 
+.label1 {
+  color: white;
+}
+
+.label2 {
+  color: white;
+}
+
+.label3 {
+  color: white;
+}
+
+.label4 {
+  color: white;
+}
+
+.label5 {
+  color: white;
+}
+
 /* SignUp Form */
 
 .signup-box {
@@ -361,6 +399,15 @@ html, body {
 h2 {
   color: red;
   width: 50%;
+  /* text-align: center; */
+  margin-left: 0px;
+}
+
+.welcome {
+  color: red;
+  width: 50%;
+  text-align: center;
+  margin-left: 443px;
 }
 
 p {
@@ -368,13 +415,18 @@ p {
 }
 
 /* Inside each Movie Card */
-/* .comment-detail {
+
+.title {
+  color: red;
+}
+
+.comment-detail {
   position: initial;
   top: 50%;
   left: 80%;
   width: 400px;
   padding: 40px;
-  transform: translate(295%, -319%);
+  transform: translate(295%, -297%);
   background: rgba(255, 255, 255, 0.877);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(255, 255, 255, 0.836);
@@ -421,13 +473,13 @@ h4 {
 .update-form {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 32%;
   width: 400px;
   padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
+  transform: translate(146%, -68%);
+  background: rgba(255, 255, 255, 0.877);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.836);
   border-radius: 10px;
-} */
+}
 

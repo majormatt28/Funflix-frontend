@@ -16,21 +16,21 @@ function Header ({currentUser, setCurrentUser}) {
          </div>
          <nav>
             {currentUser? (
-               <>
+               <div className="main-menu-button">
                <NavLink className="button" to="/movies">
                All Movies
             </NavLink>
-               <button onClick={logout}className="button" >Logout</button>
-               </>
+               <button onClick={logout} className="button">Logout</button>
+               </div>
             ):(
-               <>
+               <div className="lgn-sgn-button">
                   <NavLink className="button" to="/login">
                      Login
                   </NavLink>
                   <NavLink className="button" to="/signup">
                      Sign Up
                   </NavLink>
-               </>
+               </div>
             )}
          </nav>
       </header>

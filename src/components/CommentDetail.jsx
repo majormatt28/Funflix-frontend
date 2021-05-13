@@ -34,7 +34,7 @@ function CommentDetail({user_id, comment, rating, username, currentUser, id, del
             <h4>Posted by: {username}</h4>
             {user_id === currentUser.id ? (
             <>
-                <button>Update Review</button>
+                {/* <button>Update Review</button> */}
                 <button onClick={handleDelete}>Delete Review</button>
                 
             </>
