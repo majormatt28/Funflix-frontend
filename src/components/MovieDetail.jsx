@@ -20,17 +20,17 @@ function MovieDetail({currentUser}){
         // render movie object 
         setMovie({...movie, reviews: updatedReviews})
     }
-
-    const updateReview=(reviewId)=>{
+    
+    const updateReview=(newReview)=>{
+        // console.log("newReview",newReview)
         const update = movie.reviews.map(review=>{
-            if (review.id===reviewId){
-                console.log("update", update)
-            }else{
-                return {...movie, review}
-            }
+            if (review.id===newReview.id){
+                return  newReview    
+            }else return review
         })
-        console.log(update)
+        setMovie({...movie, reviews: update})
     }
+
     const deleteReview=(reviewId)=>{
         const removeReview = movie.reviews.filter(review=>review.id !== reviewId)
         setMovie({...movie, reviews: removeReview})
@@ -38,15 +38,15 @@ function MovieDetail({currentUser}){
 
     const {title, image, release_date, description, genre} = movie
     
-    const renderReview =() => movie.reviews.map(review=>{
-        return (console.log("review",review),
+    const renderReview =() => movie.reviews.map(review=>
+        // return (console.log("review",review),
 
     <CommentDetail key= {review.id} {...review} currentUser={currentUser} 
         movie={movie} 
         deleteReview={deleteReview}
         updateReview={updateReview}
-        />) 
-    })
+        />
+    )
    
 
     return (

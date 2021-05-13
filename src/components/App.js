@@ -10,7 +10,7 @@ import Home from "./Home";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
-  console.log(currentUser)
+  // console.log("current user",currentUser)
 
     useEffect(()=>{
       const token = localStorage.getItem("token")
