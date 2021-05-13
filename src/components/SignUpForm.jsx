@@ -45,7 +45,7 @@ function SignUpForm ({ setCurrentUser}) {
          <form onSubmit={handleSubmit} className="signup-box">
             <h2>Please fill out Sign Up Form</h2>
             <div className="user-box">
-            <label htmlFor="username">UserName: </label>
+            <label className="label3" htmlFor="username">UserName: </label>
             <input
                type="text"
                name="username"
@@ -55,7 +55,7 @@ function SignUpForm ({ setCurrentUser}) {
             </div>
             <br/>
             <div className="user-box">
-            <label htmlFor="password">Password: </label>
+            <label className="label4" htmlFor="password">Password: </label>
             <input 
                type="password"
                name="password"
@@ -64,7 +64,7 @@ function SignUpForm ({ setCurrentUser}) {
             />
             </div>
             <div className="user-box">
-            <label htmlFor="age">Age: </label>
+            <label className="label5" htmlFor="age">Age: </label>
             <input 
                type="number"
                name="age"

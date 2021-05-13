@@ -39,7 +39,7 @@ function LoginForm ({ setCurrentUser }) {
             <form onSubmit={handleSubmit} className="login-box">
                 <h2>Login</h2>
                 <div className="user-box">
-                <label>User Name: </label>
+                <label className="label1">User Name: </label>
                 <input type="text"
                     name="username"
                     value={username}
@@ -48,7 +48,7 @@ function LoginForm ({ setCurrentUser }) {
                 </div>
                 <br/>
                 <div className="user-box">
-                <label>Password: </label>
+                <label className="label2">Password: </label>
                 <input type="password"
                     name="password"
                     value={password}
