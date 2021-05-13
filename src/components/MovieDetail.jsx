@@ -71,15 +71,3 @@ function MovieDetail({currentUser}){
 }
 
 export default MovieDetail;
- // console.log("review",typeof review)
-        // {review.comment} 
-    //  {review.rating} 
-    //  {review.username}/>
-    // {/* {currentUser? (
-    //     <>
-    //     <button>Edit Comment</button>
-    //     <button>Delete Comment</button>
-    //     </>
-    // ): null}
-    
-    // </div> */}
