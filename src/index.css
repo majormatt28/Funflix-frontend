@@ -417,10 +417,10 @@ p {
 /* Inside each Movie Card */
 
 .title {
-  color: red;
+  color: black;
 }
 
-.comment-detail {
+/* .comment-detail {
   position: initial;
   top: 50%;
   left: 80%;
@@ -431,7 +431,7 @@ p {
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(255, 255, 255, 0.836);
   border-radius: 10px;
-}
+} */
 
 .movie-poster{
   width: 20%;
@@ -439,7 +439,7 @@ p {
   vertical-align: middle;
 }
 
-.comment-form {
+/* .comment-form {
   position: absolute;
   top: 50%;
   left: 32%;
@@ -450,9 +450,9 @@ p {
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(255, 255, 255, 0.836);
   border-radius: 10px;
-}
+} */
 
-.movie-card {
+/* .movie-card {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -464,13 +464,13 @@ p {
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
-}
+} */
 
-h4 {
+/* h4 {
   color: black;
-}
+} */
 
-.update-form {
+/* .update-form {
   position: absolute;
   top: 50%;
   left: 32%;
@@ -481,5 +481,5 @@ h4 {
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(255, 255, 255, 0.836);
   border-radius: 10px;
-}
+} */
 
