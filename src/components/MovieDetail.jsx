@@ -14,7 +14,6 @@ function MovieDetail({currentUser}){
         .then(resp=>resp.json())
         .then(movie=>setMovie(movie))
     },[id])
-    console.log("movie", movie)
 
     const addNewReview=(newReview)=>{ 
         const updatedReviews = [...movie.reviews, newReview]
@@ -25,9 +24,9 @@ function MovieDetail({currentUser}){
     const updateReview=(reviewId)=>{
         const update = movie.reviews.map(review=>{
             if (review.id===reviewId){
-                return {...movie,reviews:update}
+                console.log("update", update)
             }else{
-                return {review}
+                return {...movie, review}
             }
         })
         console.log(update)
