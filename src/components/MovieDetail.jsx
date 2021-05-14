@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom'
-// import CommentContainer from "./CommentContainer";
 import CommentForm from "./CommentForm"
 import CommentDetail from "./CommentDetail"
 
@@ -39,7 +38,8 @@ function MovieDetail({currentUser}){
         setMovie({...movie, reviews: removeReview})
     }
 
-    const {title, image, release_date, description, genre} = movie
+    const {title, image, release_date, description, genre, average_rating} = movie
+    console.log("average_rating",average_rating )
     
     const renderReview =() => movie.reviews.map(review=>
         // return (console.log("review",review),
@@ -57,9 +57,10 @@ function MovieDetail({currentUser}){
         <div className="movie-card">
             <h1 className="title">{title}</h1>
             <img className="movie-poster" src={image} alt={title}/>
-            <h2 className="movie-desc">Description: {description}</h2>
-            <h2 className="movie-genre">Genre: {genre}</h2>
-            <h2 className="movie-date">Release Date: {release_date}</h2>
+            <h2 className="movie-details">Description: {description}</h2>
+            <h2 className="movie-details">Genre: {genre}</h2>
+            <h2 className="movie-details">Release Date: {release_date}</h2>
+            <h2 className = "movie-details">Average Rating: {average_rating}</h2>
             </div>
             <div className="comment">
             <CommentForm addReview={addNewReview} currentUser = {currentUser} movie={movie}/>

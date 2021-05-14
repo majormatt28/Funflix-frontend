@@ -1,7 +1,8 @@
 import {useState} from "react"
 
-function CommentDetail({user_id, comment, rating, username, currentUser, id, deleteReview, updateReview}){
-    
+function CommentDetail({user_id, comment, rating, username, currentUser, id, average_rating, deleteReview, updateReview}){
+    console.log("average_rating", average_rating)
+    console.log("comment", comment)
     const [newComment, setNewComment] = useState("")
     const [newRating, setNewRating] = useState("")
     const [update, setUpdate] = useState(false)
@@ -64,6 +65,8 @@ function CommentDetail({user_id, comment, rating, username, currentUser, id, del
                     type="number" 
                     id="rating"
                     name="rating"
+                    min ="0"
+                    max="10"
                     value={newRating}
                     onChange={(e)=>setNewRating(e.target.value)}
                     required

@@ -492,17 +492,17 @@ p {
   /* border-radius: 10px; */
 }
 
-.movie-desc {
+.movie-details {
   color: red;
 }
 
-.movie-genre {
+/* .movie-genre {
   color: red;
 }
 
 .movie-date {
   color: red;
-}
+} */
 
 h4 {
   color: black;

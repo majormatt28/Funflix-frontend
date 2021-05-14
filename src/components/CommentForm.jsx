@@ -12,7 +12,7 @@ function CommentForm({ addReview, currentUser, movie }){
         setRating("")
         
         const newReview = {
-            comment, rating, 
+            comment, rating,
             user_id: currentUser.id,
             movie_id: movie.id
         }
@@ -37,6 +37,7 @@ function CommentForm({ addReview, currentUser, movie }){
                 name="comment"
                 value={comment}
                 onChange={(e)=>setComment(e.target.value)}
+                required
                 />
                 
                 <br/>
@@ -46,6 +47,8 @@ function CommentForm({ addReview, currentUser, movie }){
                 id="rating"
                 name="rating"
                 value={rating}
+                min="0"
+                max="10"
                 onChange={(e)=>setRating(e.target.value)}
                 />
                 
