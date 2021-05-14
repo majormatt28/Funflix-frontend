@@ -5,7 +5,7 @@ import CommentDetail from "./CommentDetail"
 
 function MovieDetail({currentUser}){
     const [movie, setMovie] = useState([])
-    const [review, setReview] = useState([])
+    const [reviews, setReviews] = useState([])
     const {id} = useParams()
     // console.log("movieDetail-Current User", currentUser)
    
@@ -13,36 +13,35 @@ function MovieDetail({currentUser}){
         fetch (`http://127.0.0.1:3001/movies/${id}`)
         .then(resp=>resp.json())
         .then(movie=>{setMovie(movie)
-                      setReview(movie.reviews)
+                      setReviews(movie.reviews)
         })
     },[id])
     
     const addNewReview=(newReview)=>{ 
-        const updatedReviews = [...review, newReview]
+        const updatedReviews = [...reviews, newReview]
         // render movie object 
-        setReview(updatedReviews)
+        setReviews(updatedReviews)
     }
     
     const updateReview=(newReview)=>{
-        // console.log("newReview",newReview)
-        const update = movie.reviews.map(review=>{
+        console.log("newReview",newReview)
+        const update = reviews.map(review=>{
             if (review.id===newReview.id){
-                return  newReview    
+                return  newReview 
             }else return review
         })
-        setReview(update)
+        setReviews(update)
     }
 
     const deleteReview=(reviewId)=>{
-        const removeReview = movie.reviews.filter(review=>review.id !== reviewId)
-        setReview(removeReview)
+        const removeReview = reviews.filter(review=>review.id !== reviewId)
+        setReviews(removeReview)
     }
 
     const {title, image, release_date, description, genre, average_rating} = movie
-    // console.log("average_rating",average_rating )
-
-    const sortReviews = [...review].sort((a,b)=>new Date(b.date) - new Date(a.date))
-   
+    
+    // const sortReviews = [...review].sort((a,b)=>new Date(b.date) - new Date(a.date))
+    const sortReviews = [...reviews].sort((a,b)=>(b.id) - (a.id))
     const renderReview =() => sortReviews.map(review=>
         
     <CommentDetail key= {review.id} {...review} currentUser={currentUser} 
