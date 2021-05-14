@@ -412,11 +412,12 @@ p {
 
 .movie-container {
   display: flex;
-  background: black;
+  /* background: black; */
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
   border-radius: 10px;
   flex-direction: row;
+  transform: translate(0px, 46px);
 }
 
 .movie-card {
@@ -432,11 +433,13 @@ p {
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
+  margin-left: 22rem;
 }
 
 .title {
   /* grid-area: header; */
   color: red;
+  transform: translate(3rem, 10px);
 }
 
 .movie-poster{
@@ -444,6 +447,7 @@ p {
   width: 20%;
   height: auto;
   vertical-align: middle;
+  transform: translate(46rem, 10px);
 }
 
 .comment-detail {
@@ -494,18 +498,52 @@ p {
 
 .movie-details {
   color: red;
+  transform: translate(32rem, 10px);
 }
 
 /* .movie-genre {
   color: red;
+  transform: translate(32rem, 10px);
 }
 
 .movie-date {
   color: red;
-} */
+  transform: translate(32rem, 10px);
+}
 
 h4 {
   color: black;
 }
 
+/* Logo Animation */
 
+.funflix-logo {
+  animation: wiggle 2s linear infinite;
+  width: auto;
+  height: 68%;
+  vertical-align: middle;
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}

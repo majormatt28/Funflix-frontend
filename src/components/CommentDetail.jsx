@@ -6,6 +6,7 @@ function CommentDetail({user_id, comment, rating, username, currentUser, id, ave
     const [newComment, setNewComment] = useState("")
     const [newRating, setNewRating] = useState("")
     const [update, setUpdate] = useState(false)
+    const [averageRating, setAverageRating] = useState(0)
     // console.log("currentUser", currentUser)
     // console.log("user_id", user_id)
     // console.log("review id", id)

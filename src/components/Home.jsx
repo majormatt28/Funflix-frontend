@@ -1,3 +1,4 @@
+import logo from "./logo.png"
 
 function Home () {
     return (
@@ -9,6 +10,7 @@ function Home () {
              <p>
                 Rate and comment a selection of new movies!
              </p>
+             <img src={logo} className="funflix-logo" alt="logo"/>
           </div>
        </section>
     );
