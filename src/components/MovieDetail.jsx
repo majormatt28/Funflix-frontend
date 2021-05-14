@@ -5,7 +5,7 @@ import CommentDetail from "./CommentDetail"
 
 function MovieDetail({currentUser}){
     const [movie, setMovie] = useState([])
-    // const [review, setReview] = useState([])
+    const [review, setReview] = useState([])
     const {id} = useParams()
     // console.log("movieDetail-Current User", currentUser)
    
@@ -13,14 +13,14 @@ function MovieDetail({currentUser}){
         fetch (`http://127.0.0.1:3001/movies/${id}`)
         .then(resp=>resp.json())
         .then(movie=>{setMovie(movie)
-                    //   setReview(movie.reviews)
+                      setReview(movie.reviews)
         })
     },[id])
-
+    
     const addNewReview=(newReview)=>{ 
-        const updatedReviews = [...movie.reviews, newReview]
+        const updatedReviews = [...review, newReview]
         // render movie object 
-        setMovie({...movie, reviews: updatedReviews})
+        setReview(updatedReviews)
     }
     
     const updateReview=(newReview)=>{
@@ -30,20 +30,21 @@ function MovieDetail({currentUser}){
                 return  newReview    
             }else return review
         })
-        setMovie({...movie, reviews: update})
+        setReview(update)
     }
 
     const deleteReview=(reviewId)=>{
         const removeReview = movie.reviews.filter(review=>review.id !== reviewId)
-        setMovie({...movie, reviews: removeReview})
+        setReview(removeReview)
     }
 
     const {title, image, release_date, description, genre, average_rating} = movie
-    console.log("average_rating",average_rating )
-    
-    const renderReview =() => movie.reviews.map(review=>
-        // return (console.log("review",review),
+    // console.log("average_rating",average_rating )
 
+    const sortReviews = [...review].sort((a,b)=>new Date(b.date) - new Date(a.date))
+   
+    const renderReview =() => sortReviews.map(review=>
+        
     <CommentDetail key= {review.id} {...review} currentUser={currentUser} 
         movie={movie} 
         deleteReview={deleteReview}

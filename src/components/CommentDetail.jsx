@@ -1,8 +1,8 @@
 import {useState} from "react"
 
 function CommentDetail({user_id, comment, rating, username, currentUser, id, average_rating, deleteReview, updateReview}){
-    console.log("average_rating", average_rating)
-    console.log("comment", comment)
+    // console.log("average_rating", average_rating)
+    // console.log("comment", comment)
     const [newComment, setNewComment] = useState("")
     const [newRating, setNewRating] = useState("")
     const [update, setUpdate] = useState(false)
